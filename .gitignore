@@ -1,0 +1,4 @@
+# Ignorar a pasta target (onde os arquivos compilados são armazenados)
+target/
+
+src/main/resources/teste-firebase-adminsdk.json
