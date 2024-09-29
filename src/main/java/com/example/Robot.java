@@ -10,10 +10,28 @@ public class Robot {
     private double magnitude;
     private GeoPoint location;
     private Timestamp lastUpdated;
+    private double humidity;
+    private double energyConsumption;
 
     // Construtor para inicializar um robô com um ID
     public Robot(String id) {
         this.id = id;
+    }
+
+    public double getHumidity(){
+        return humidity;
+    }
+
+    public void setHumidity(double humidity){
+        this.humidity = humidity;
+    }
+
+    public double getEnergyConsumption(){
+        return energyConsumption;
+    }
+
+    public void setEnergyConsumption(double energyConsumption){
+        this.energyConsumption = energyConsumption;
     }
 
     // Getters e Setters para os atributos do robô
@@ -63,6 +81,9 @@ public class Robot {
         System.out.println("ID do robô: " + id);
         System.out.println("Temperatura atual: " + temperature);
         System.out.println("Magnitude do terremoto: " + magnitude);
+        System.out.println("Umidade: " + humidity);
+        System.out.println("Energia consumida (W): " + energyConsumption);
+        
         if (location != null) {
             System.out.println("Localização: " + location.getLatitude() + ", " + location.getLongitude());
         }

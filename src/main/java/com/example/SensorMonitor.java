@@ -38,12 +38,16 @@ public class SensorMonitor {
                         Double magnitude = snapshot.getDouble("magnitude");
                         GeoPoint location = snapshot.getGeoPoint("location");
                         Timestamp lastUpdated = snapshot.getTimestamp("lastUpdated");
+                        Double humidity = snapshot.getDouble("humidity");
+                        Double energyConsumption = snapshot.getDouble("energyConsumption");
 
                         // Atualiza os atributos do robô
                         if (temperature != null) robot.setTemperature(temperature);
                         if (magnitude != null) robot.setMagnitude(magnitude);
                         if (location != null) robot.setLocation(location);
                         if (lastUpdated != null) robot.setLastUpdated(lastUpdated);
+                        if (humidity!= null) robot.setHumidity(humidity);
+                        if (energyConsumption!= null) robot.setEnergyConsumption(energyConsumption);
 
                         // Exibe as informações do robô
                         robot.displayRobotInfo();
@@ -78,6 +82,8 @@ public class SensorMonitor {
                     Double magnitude = document.getDouble("magnitude");
                     GeoPoint location = document.getGeoPoint("location");
                     Timestamp lastUpdated = document.getTimestamp("lastUpdated");
+                    Double humidity = document.getDouble("humidity");
+                    Double energyConsumption = document.getDouble("energyConsumption");
 
                     // Exibe os dados dos robôs encontrados
                     System.out.println("ID do robô: " + robotId);
@@ -85,6 +91,8 @@ public class SensorMonitor {
                     System.out.println("Magnitude do terremoto: " + magnitude);
                     System.out.println("Localização: " + location.getLatitude() + ", " + location.getLongitude());
                     System.out.println("Última atualização: " + lastUpdated.toDate());
+                    System.out.println("Umidade: " + humidity);
+                    System.out.println("Energia consumida (W): " + energyConsumption);
                     System.out.println("\n");
                 }
             }
@@ -114,6 +122,8 @@ public class SensorMonitor {
                     Double magnitude = document.getDouble("magnitude");
                     GeoPoint location = document.getGeoPoint("location");
                     Timestamp lastUpdated = document.getTimestamp("lastUpdated");
+                    Double humidity = document.getDouble("humidity");
+                    Double energyConsumption = document.getDouble("energyConsumption");
 
                     // Exibe os dados dos robôs encontrados
                     System.out.println("ID do robô: " + robotId);
@@ -121,6 +131,8 @@ public class SensorMonitor {
                     System.out.println("Magnitude do terremoto: " + magnitude);
                     System.out.println("Localização: " + location.getLatitude() + ", " + location.getLongitude());
                     System.out.println("Última atualização: " + lastUpdated.toDate());
+                    System.out.println("Umidade: " + humidity);
+                    System.out.println("Energia consumida (W): " + energyConsumption);
                     System.out.println("\n");
                 }
             }
@@ -138,12 +150,16 @@ public class SensorMonitor {
         double newTemperature = Math.random() * 100; // Temperatura aleatória
         double magnitude = Math.random() < 0.1 ? Math.random() * 10 : 0; // 10% de chance de terremoto
         GeoPoint newLocation = new GeoPoint(-23.55052, -46.633308); // Exemplo de coordenadas (São Paulo)
+        double humidity = Math.random() * 100; // Umidade entre 0 e 100%
+        double energyConsumption = Math.random() * 500; // Consumo de energia em watts
 
         Map<String, Object> updates = new HashMap<>();
         updates.put("temperature", newTemperature);
         updates.put("magnitude", magnitude);
+        updates.put("humidity", humidity);
         updates.put("location", newLocation); // Adiciona localização (latitude e longitude)
         updates.put("lastUpdated", FieldValue.serverTimestamp()); // Timestamp do momento da atualização
+        updates.put("energyConsumption", energyConsumption);
 
         try {
             db.collection("robots").document(robotId).set(updates).get(); // Atualiza o documento no Firestore

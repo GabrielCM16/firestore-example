@@ -12,11 +12,11 @@ public class Main {
         firebase.inicializar();
         
         // Cadastrar usuários
-        firebase.cadastrarUsuario("user1", "Gabriel", "Costa", "gabriel.costa@gmail.com");
-        firebase.cadastrarUsuario("user2", "Pedro", "Moraes", "pedro@gmail.com");
+        //firebase.cadastrarUsuario("user1", "Gabriel", "Costa", "gabriel.costa@gmail.com");
+        //firebase.cadastrarUsuario("user2", "Pedro", "Moraes", "pedro@gmail.com");
         
         // Buscar um usuário
-        firebase.buscarUsuario("user2");
+        //firebase.buscarUsuario("user2");
         System.out.println("\n\n\n\n");
 
         // Monitoramento de sensores
@@ -33,9 +33,9 @@ public class Main {
         //robot1.displayRobotInfo();
 
 
-        System.out.println("\n\n\n");
-        System.out.println("Consulta do robos com temperatura maior que 70:\n");
-        sensorMonitor.queryRobotsWithHighTemperature70();
+        //System.out.println("\n\n\n");
+        //System.out.println("Consulta do robos com temperatura maior que 70:\n");
+        //sensorMonitor.queryRobotsWithHighTemperature70();
 
         System.out.println("\n\n\n");
         System.out.println("Consulta dos 5 robos com as maiores temperaturas:\n");
