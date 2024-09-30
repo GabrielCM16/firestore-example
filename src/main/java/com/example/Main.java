@@ -23,9 +23,9 @@ public class Main {
         sensorMonitor = new SensorMonitor();
         sensorMonitor.db = firebase.db; // Atribui o banco de dados ao monitor de sensores
 
-        sensorMonitor.queryRobotsWithMuitasConsultas(20, 40, 100);
+        //sensorMonitor.queryRobotsWithMuitasConsultas(20, 40, 100);
 
-        //Robot robot1 = sensorMonitor.fetchRobotData("robot");
+        //Robot robot1 = sensorMonitor.fetchRobotData("robot1");
         //robot1.displayRobotInfo(); 
 
         //updateSensor();
@@ -36,6 +36,15 @@ public class Main {
 
         // Exibe as informações do robô
         //robot1.displayRobotInfo();
+
+        //Timer timer = new Timer();
+        //timer.scheduleAtFixedRate(new TimerTask() {
+        //    @Override
+        //    public void run() {
+        //        //apenas para o programa não parar de executar
+        //        
+        //   }
+        //}, 0, 10000); // A cada 10 segundos
 
 
         //System.out.println("\n\n\n");

@@ -12,6 +12,7 @@ public class Robot {
     private Timestamp lastUpdated;
     private double humidity;
     private double energyConsumption;
+    public int Nconsulta = 0;
 
     // Construtor para inicializar um robô com um ID
     public Robot(String id) {
@@ -78,7 +79,7 @@ public class Robot {
     // Exibe as informações do robô
     public void displayRobotInfo() {
         System.out.println("\n\n");
-        System.out.println("ID do robô: " + id);
+        System.out.println("ID do robô: " + id + " Numero da consulta: " + Nconsulta);
         System.out.println("Temperatura atual: " + temperature);
         System.out.println("Magnitude do terremoto: " + magnitude);
         System.out.println("Umidade: " + humidity);
@@ -91,6 +92,8 @@ public class Robot {
             System.out.println("Última atualização: " + lastUpdated.toDate());
         }
         System.out.println("\n");
+        Nconsulta++;
+
     }
 
     // Verifica se a temperatura está em um nível crítico
