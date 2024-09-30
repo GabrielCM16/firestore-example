@@ -90,6 +90,7 @@ public class Robot {
         if (lastUpdated != null) {
             System.out.println("Última atualização: " + lastUpdated.toDate());
         }
+        System.out.println("\n");
     }
 
     // Verifica se a temperatura está em um nível crítico

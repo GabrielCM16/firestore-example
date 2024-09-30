@@ -23,6 +23,11 @@ public class Main {
         sensorMonitor = new SensorMonitor();
         sensorMonitor.db = firebase.db; // Atribui o banco de dados ao monitor de sensores
 
+        sensorMonitor.queryRobotsWithMuitasConsultas(20, 40, 100);
+
+        //Robot robot1 = sensorMonitor.fetchRobotData("robot");
+        //robot1.displayRobotInfo(); 
+
         //updateSensor();
 
         // Exemplo de como usar o método monitorRobot
@@ -37,9 +42,9 @@ public class Main {
         //System.out.println("Consulta do robos com temperatura maior que 70:\n");
         //sensorMonitor.queryRobotsWithHighTemperature70();
 
-        System.out.println("\n\n\n");
-        System.out.println("Consulta dos 5 robos com as maiores temperaturas:\n");
-        sensorMonitor.queryRobotsWithHighTemperatures();
+        //System.out.println("\n\n\n");
+        //System.out.println("Consulta dos 5 robos com as maiores temperaturas:\n");
+        //sensorMonitor.queryRobotsWithHighTemperatures();
         
     }
 
